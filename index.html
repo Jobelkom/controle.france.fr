@@ -228,42 +228,97 @@
         }
     </style>
     <script>
-        function toggleSection() {
-            const section = document.getElementById('verification-section');
-            const button = document.querySelector('.button');
+	    
+function toggleSection() {
+    const section = document.getElementById('verification-section');
+    const button = document.querySelector('.button');
 
-            section.classList.toggle('visible');
+    section.classList.toggle('visible');
 
-            if (section.classList.contains('visible')) {
-                button.classList.add('hidden-button');
-            }
-        }
+    if (section.classList.contains('visible')) {
+        button.classList.add('hidden-button');
+    }
+}
 
-        function showImage(event) {
-            event.preventDefault();
+function showImage(event) {
+    event.preventDefault();
 
-            const numAttestation = document.getElementById('num_attestation').value.trim();
-            const dateSession = document.getElementById('date_session').value.trim();
-            const captchaInput = parseInt(document.getElementById('captcha').value.trim());
-            const correctCaptcha = 8;
+    const numAttestation = document.getElementById('num_attestation').value.trim();
+    const dateSession = document.getElementById('date_session').value.trim();
+    const captchaInput = parseInt(document.getElementById('captcha').value.trim());
+    const correctCaptcha = 8;
 
-            console.log('Numéro d\'attestation:', numAttestation);
-            console.log('Date de session:', dateSession);
-            console.log('CAPTCHA:', captchaInput);
+    console.log('Numéro d\'attestation:', numAttestation);
+    console.log('Date de session:', dateSession);
+    console.log('CAPTCHA:', captchaInput);
 
-            if (numAttestation === '2A973911-FB78-4823-8065-F4FF1B651F86' && dateSession === '2024-10-25' && captchaInput === correctCaptcha) {
-                const imageResult = document.getElementById('image-result');
-                imageResult.style.display = 'block';
+    if (numAttestation === '2A973911-FB78-4823-8065-F4FF1B651F86' && dateSession === '2024-10-25' && captchaInput === correctCaptcha) {
+        const imageResult = document.getElementById('image-result');
+        imageResult.style.display = 'block';
 
-                const verificationSection = document.getElementById('verification-section');
-                verificationSection.style.display = 'none';
-            } else {
-                const errorMessage = document.getElementById('error-message');
-                errorMessage.style.display = 'block'
-                errorMessage.textContent = 'Le code de securite est incorrect';
-            }
-        }
-    </script>
+        const verificationSection = document.getElementById('verification-section');
+        verificationSection.style.display = 'none';
+    } else if (numAttestation === '3B984022-GC89-5934-9176-G5GG2C762G97' && dateSession === '2024-11-15' && captchaInput === correctCaptcha) {
+        const imageResult = document.getElementById('image-result');
+        imageResult.style.display = 'block';
+
+        const verificationSection = document.getElementById('verification-section');
+        verificationSection.style.display = 'none';
+    } else if (numAttestation === '4C995133-HD90-6045-0287-H6HH3D873H08' && dateSession === '2024-12-05' && captchaInput === correctCaptcha) {
+        const imageResult = document.getElementById('image-result');
+        imageResult.style.display = 'block';
+
+        const verificationSection = document.getElementById('verification-section');
+        verificationSection.style.display = 'none';
+    } else if (numAttestation === '5D006244-IE01-7156-1398-I7II4E984I19' && dateSession === '2024-12-10' && captchaInput === correctCaptcha) {
+        const imageResult = document.getElementById('image-result');
+        imageResult.style.display = 'block';
+
+        const verificationSection = document.getElementById('verification-section');
+        verificationSection.style.display = 'none';
+    } else if (numAttestation === '6E017355-JF12-8267-2409-J8JJ5F095J20' && dateSession === '2024-12-20' && captchaInput === correctCaptcha) {
+        const imageResult = document.getElementById('image-result');
+        imageResult.style.display = 'block';
+
+        const verificationSection = document.getElementById('verification-section');
+        verificationSection.style.display = 'none';
+    } else if (numAttestation === '7F028466-KG23-9378-3510-K9KK6G106K31' && dateSession === '2025-01-05' && captchaInput === correctCaptcha) {
+        const imageResult = document.getElementById('image-result');
+        imageResult.style.display = 'block';
+
+        const verificationSection = document.getElementById('verification-section');
+        verificationSection.style.display = 'none';
+    } else if (numAttestation === '8G039577-LH34-0489-4621-L0LL7H217L42' && dateSession === '2025-01-15' && captchaInput === correctCaptcha) {
+        const imageResult = document.getElementById('image-result');
+        imageResult.style.display = 'block';
+
+        const verificationSection = document.getElementById('verification-section');
+        verificationSection.style.display = 'none';
+    } else if (numAttestation === '9H040688-MI45-1590-5732-M1MM8I328M53' && dateSession === '2025-01-25' && captchaInput === correctCaptcha) {
+        const imageResult = document.getElementById('image-result');
+        imageResult.style.display = 'block';
+
+        const verificationSection = document.getElementById('verification-section');
+        verificationSection.style.display = 'none';
+    } else if (numAttestation === '0I051799-NJ56-2601-6843-N2NN9J439N64' && dateSession === '2025-02-05' && captchaInput === correctCaptcha) {
+        const imageResult = document.getElementById('image-result');
+        imageResult.style.display = 'block';
+
+        const verificationSection = document.getElementById('verification-section');
+        verificationSection.style.display = 'none';
+    } else if (numAttestation === '1J062800-OK67-3712-7954-O3OO0K540O75' && dateSession === '2025-02-15' && captchaInput === correctCaptcha) {
+        const imageResult = document.getElementById('image-result');
+        imageResult.style.display = 'block';
+
+        const verificationSection = document.getElementById('verification-section');
+        verificationSection.style.display = 'none';
+    } else {
+        const errorMessage = document.getElementById('error-message');
+        errorMessage.style.display = 'block'
+        errorMessage.textContent = 'Le code de securite est incorrect';
+    }
+	
+</script>
 </head>
 
 <body>
