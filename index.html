@@ -227,101 +227,42 @@
             }
         }
     </style>
-    </style>
     <script>
-        // Tableau des attestations valides
-       const validAttestations = [
-    {
-        number: '2A973911-FB78-4823-8065-F4FF1B651F86',
-        date: '2024-10-25',
-        image: 'https://raw.githubusercontent.com/votre-utilisateur/votre-depot/main/images/attestation1.jpg'
-    },
-    {
-        number: '3B984022-CD89-5934-9176-G5GG2C762G97',
-        date: '2024-11-15',
-        image: 'https://raw.githubusercontent.com/votre-utilisateur/votre-depot/main/images/attestation2.jpg'
-    },
-    {
-        number: '4C995133-DE90-6045-0287-H6HH3D873H08',
-        date: '2024-12-05',
-        image: 'https://raw.githubusercontent.com/votre-utilisateur/votre-depot/main/images/attestation3.jpg'
-    },
-    {
-        number: '5D006244-EF01-7156-1398-I7II4E984I19',
-        date: '2025-01-20',
-        image: 'https://raw.githubusercontent.com/votre-utilisateur/votre-depot/main/images/attestation4.jpg'
-    },
-    {
-        number: '6E017355-FG12-8267-2409-J8JJ5F095J20',
-        date: '2025-02-10',
-        image: 'https://raw.githubusercontent.com/votre-utilisateur/votre-depot/main/images/attestation5.jpg'
-    },
-    {
-        number: '7F028466-GH23-9378-3510-K9KK6G106K31',
-        date: '2025-03-15',
-        image: 'https://raw.githubusercontent.com/votre-utilisateur/votre-depot/main/images/attestation6.jpg'
-    },
-    {
-        number: '8G039577-HI34-0489-4621-L0LL7H217L42',
-        date: '2025-04-05',
-        image: 'https://raw.githubusercontent.com/votre-utilisateur/votre-depot/main/images/attestation7.jpg'
-    },
-    {
-        number: '9H040688-IJ45-1590-5732-M1MM8I328M53',
-        date: '2025-05-20',
-        image: 'https://raw.githubusercontent.com/votre-utilisateur/votre-depot/main/images/attestation8.jpg'
-    },
-    {
-        number: '0I051799-JK56-2601-6843-N2NN9J439N64',
-        date: '2025-06-10',
-        image: 'https://raw.githubusercontent.com/votre-utilisateur/votre-depot/main/images/attestation9.jpg'
-    },
-    {
-        number: '1J062800-KL67-3712-7954-O3OO0K540O75',
-        date: '2025-07-15',
-        image: 'https://raw.githubusercontent.com/votre-utilisateur/votre-depot/main/images/attestation10.jpg'
-    }
-];
-
-
         function toggleSection() {
             const section = document.getElementById('verification-section');
             const button = document.querySelector('.button');
+
             section.classList.toggle('visible');
+
             if (section.classList.contains('visible')) {
                 button.classList.add('hidden-button');
             }
         }
 
         function showImage(event) {
-    event.preventDefault();
+            event.preventDefault();
 
-    const numAttestation = document.getElementById('num_attestation').value.trim();
-    const dateSession = document.getElementById('date_session').value.trim();
-    const captchaInput = parseInt(document.getElementById('captcha').value.trim());
-    const correctCaptcha = 8;
+            const numAttestation = document.getElementById('num_attestation').value.trim();
+            const dateSession = document.getElementById('date_session').value.trim();
+            const captchaInput = parseInt(document.getElementById('captcha').value.trim());
+            const correctCaptcha =8;
 
-    // Rechercher l'attestation correspondante
-    const attestation = validAttestations.find(attestation => 
-        attestation.number === numAttestation && attestation.date === dateSession
-    );
+            console.log('Numéro d\'attestation:', numAttestation);
+            console.log('Date de session:', dateSession);
+            console.log('CAPTCHA:', captchaInput);
 
-    if (attestation && captchaInput === correctCaptcha) {
-        // Mettre à jour les informations dynamiques
-        document.querySelector(".result-header").innerHTML = `
-            <p>Résultats pour le « <strong>TCF Canada – Test de connaissance du français pour le Canada</strong> » du <strong>${attestation.date}</strong>.</p>
-            <p>Numéro d'attestation : <strong>${attestation.number}</strong></p>
-        `;
-        document.querySelector(".image-result img").src = attestation.image;
-        document.getElementById('image-result').style.display = 'block';
-        document.getElementById('verification-section').style.display = 'none';
-    } else {
-        const errorMessage = document.getElementById('error-message');
-        errorMessage.style.display = 'block';
-        errorMessage.textContent = 'Le code de sécurité ou les informations saisies sont incorrects.';
-    }
-}
+            if (numAttestation === '2A973911-FB78-4823-8065-F4FF1B651F86' && dateSession === '2024-10-25' && captchaInput === correctCaptcha) {
+                const imageResult = document.getElementById('image-result');
+                imageResult.style.display = 'block';
 
+                const verificationSection = document.getElementById('verification-section');
+                verificationSection.style.display = 'none';
+            } else {
+                const errorMessage = document.getElementById('error-message');
+                errorMessage.style.display = 'block'
+                errorMessage.textContent = 'Le code de securite est incorrect';
+            }
+        }
     </script>
 </head>
 
@@ -388,19 +329,20 @@
     </div>
 
     <!-- Affichage du résultat après avoir recherché l'attestation -->
-   <div id="image-result" class="image-result result-container" style="display: none;">
-    <div>
+    <div id="image-result" class="image-result result-container">
         <div>
-            <div class="result-header"></div>
-        </div>
-        <div>
-            <div style="width: 50%; border-radius: 10px; border: 1px solid rgb(199, 199, 199); margin: 0 auto;">
-                <img src="" alt="Attestation" style="width: 100%; max-width: 150px;">
+            <div>
+                <div class="result-header">
+                    <p>Résultats pour le « <strong>TCF Canada – Test de connaissance du français pour le Canada</strong> » du <strong>30/10/2024</strong> pour le candidat n°<strong>2254487</strong>.</p>
+                    <p>Nom : <strong>MODI  </strong><br>Prénom : <strong>ESTELLE LOUISE </strong></p>
+                </div>
+            </div>
+            <div>
+                <div style="width: 50%; border-radius: 10px; border: 1px solid rgb(199, 199, 199); margin: 0 auto;">
+                    <img src="./img.jpeg" alt="Photo" style="width: 100%; max-width: 150px;">
+                </div>
             </div>
         </div>
-    </div>
-</div>
-
         <table>
             
             <tr>
